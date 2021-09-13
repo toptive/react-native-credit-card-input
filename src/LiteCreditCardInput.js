@@ -62,7 +62,23 @@ const s = StyleSheet.create({
   input: {
     height: 40,
     color: "black",
+    borderRightWidth: 1,
+    borderTopRightRadius: 20,
   },
+  iconContainer: {
+    width: 60,
+    height: 40,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#edf4fa",
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+    borderRightWidth: 1,
+    borderColor: "#CCCCCC",
+    backgroundColor: "#edf4fa",
+    borderTopRightRadius: 10,
+    borderBottomRightRadius: 10,
+  }
 });
 
 /* eslint react/prop-types: 0 */ // https://github.com/yannickcr/eslint-plugin-react/issues/106
@@ -152,7 +168,7 @@ export default class LiteCreditCardInput extends Component {
             keyboardType="numeric"
             containerStyle={s.numberInput} />
         </View>
-        <TouchableOpacity onPress={showRightPart ? this._focusNumber : this._focusExpiry }>
+        <TouchableOpacity onPress={showRightPart ? this._focusNumber : this._focusExpiry } style={s.iconContainer}>
           <Image style={s.icon} source={Icons[this._iconToShow()]} />
         </TouchableOpacity>
         <View style={[
