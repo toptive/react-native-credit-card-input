@@ -168,7 +168,7 @@ export default class CreditCardNumberWithExpiry extends Component {
       <View style={s.container}>
         <View style={[
           s.leftPart,
-          showRightPart ? s.hidden : s.expanded,
+          s.expanded,
         ]}>
           <CCInput {...this._inputProps("number")}
             keyboardType="numeric"
