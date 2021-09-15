@@ -42,10 +42,9 @@ const s = StyleSheet.create({
     width: 0,
   },
   leftPart: {
-    overflow: "hidden",
+  
   },
   rightPart: {
-    overflow: "hidden",
     flexDirection: "row",
   },
   last4: {
@@ -53,7 +52,7 @@ const s = StyleSheet.create({
     justifyContent: "center",
   },
   numberInput: {
-    width: INFINITE_WIDTH,
+    width: Dimensions.get('window').width - 60,
   },
   expiryInput: {
     width: Dimensions.get('window').width - 60,
