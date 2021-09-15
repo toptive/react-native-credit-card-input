@@ -105,7 +105,7 @@ export default class CreditCardNumberWithExpiry extends Component {
   static defaultProps = {
     placeholders: {
       number: "1234 5678 1234 5678",
-      expiry: "MM/YY",
+      expiry: 'Expiration date (MM/YY)',
       cvc: "CVC",
     },
     validColor: "",
