@@ -104,7 +104,7 @@ export default class CreditCardNumberWithExpiry extends Component {
 
   static defaultProps = {
     placeholders: {
-      number: "1234 5678 1234 5678",
+      number: "1234-5678-1234-5678",
       expiry: 'Expiration date (MM/YY)',
       cvc: "CVC",
     },
@@ -126,7 +126,6 @@ export default class CreditCardNumberWithExpiry extends Component {
   _focus = field => {
     if (!field) return;
     this.refs[field].focus();
-    LayoutAnimation.easeInEaseOut();
   }
 
   _inputProps = field => {

@@ -10,7 +10,7 @@ const addGaps = (string = "", gaps) => {
     if (index === 0) return "";
     const start = offsets[index - 1];
     return string.substr(start, end - start);
-  }).filter(part => part !== "").join(" ");
+  }).filter(part => part !== "").join("-");
 };
 
 const FALLBACK_CARD = { gaps: [4, 8, 12], lengths: [16], code: { size: 3 } };
