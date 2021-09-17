@@ -21,7 +21,7 @@ const s = StyleSheet.create({
   mainWrapper: {
     paddingLeft: 10,
     paddingRight: 10,
-    flex: 0.8,
+    flex: 0.65,
     justifyContent: "space-around",
     alignItems: "center",
   },
