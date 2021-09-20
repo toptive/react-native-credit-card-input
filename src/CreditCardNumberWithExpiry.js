@@ -21,8 +21,7 @@ const s = StyleSheet.create({
   mainWrapper: {
     paddingLeft: 10,
     paddingRight: 10,
-    flex: 0.65,
-    justifyContent: "space-around",
+    justifyContent: "center",
     alignItems: "center",
   },
   container: {
@@ -53,9 +52,11 @@ const s = StyleSheet.create({
   },
   numberInput: {
     width: Dimensions.get('window').width - 60,
+    paddingVertical: 5,
   },
   expiryInput: {
     width: Dimensions.get('window').width - 60,
+    paddingVertical: 5,
   },
   cvcInput: {
     width: 80,
@@ -82,6 +83,8 @@ const s = StyleSheet.create({
     backgroundColor: "#edf4fa",
     borderTopRightRadius: 10,
     borderBottomRightRadius: 10,
+    paddingBottom: 4,
+    paddingLeft: 4
   }
 });
 
