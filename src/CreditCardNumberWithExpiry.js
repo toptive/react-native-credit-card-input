@@ -51,11 +51,10 @@ const s = StyleSheet.create({
     justifyContent: "center",
   },
   numberInput: {
-    width: Dimensions.get('window').width - 60,
     paddingVertical: 5,
+    
   },
   expiryInput: {
-    width: Dimensions.get('window').width - 60,
     paddingVertical: 5,
   },
   cvcInput: {
@@ -69,6 +68,12 @@ const s = StyleSheet.create({
     height: 40,
     color: "black",
     borderRightWidth: 1,
+  },
+  inputCC: {
+    height: 40,
+    color: "black",
+    borderBottomRightRadius: 0,
+    borderTopRightRadius: 0,
   },
   iconContainer: {
     width: 60,
@@ -140,6 +145,7 @@ export default class CreditCardNumberWithExpiry extends Component {
 
     return {
       inputStyle: [s.input, inputStyle],
+      inputCCStyle: [s.inputCC, inputStyle],
       validColor, invalidColor, placeholderColor,
       ref: field, field,
 
@@ -166,23 +172,31 @@ export default class CreditCardNumberWithExpiry extends Component {
 
     return (
       <View style={s.mainWrapper}>
-      <View style={s.container}>
-        <View style={[
-          s.leftPart,
-          s.expanded,
-        ]}>
-          <CCInput {...this._inputProps("number")}
-            keyboardType="numeric"
-            containerStyle={s.numberInput} />
+        <View style={s.container}>
+          <View style={[
+            s.leftPart,
+            s.expanded,
+          ]}>
+            <CCInput {...this._inputProps("number")}
+              keyboardType="numeric"
+              containerStyle={s.numberInput}
+              name={'ccNumber'} />
+          </View>
+          <TouchableOpacity onPress={showRightPart ? this._focusNumber : this._focusExpiry } style={s.iconContainer}>
+            <Image style={s.icon} source={Icons[this._iconToShow()]} />
+          </TouchableOpacity>
         </View>
-        <TouchableOpacity onPress={showRightPart ? this._focusNumber : this._focusExpiry } style={s.iconContainer}>
-          <Image style={s.icon} source={Icons[this._iconToShow()]} />
-        </TouchableOpacity>
-      </View>
-      <CCInput {...this._inputProps("expiry")}
-        keyboardType="numeric"
-        containerStyle={s.expiryInput} 
-      />
+        <View style={s.container}>
+          <View style={[
+            s.leftPart,
+            s.expanded,
+          ]}>
+            <CCInput {...this._inputProps("expiry")}
+              keyboardType="numeric"
+              containerStyle={s.expiryInput} 
+            />
+          </View>
+        </View>
       </View>
     );
   }
